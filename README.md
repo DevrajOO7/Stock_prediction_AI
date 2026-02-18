@@ -1,11 +1,14 @@
 # AI Algorithmic Trading Dashboard (Project 3.0)
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://stockpredai.streamlit.app/)
+
 A professional-grade financial analysis tool powered by Deep Learning (LSTM) and real-time market data. Analyze stocks, view options chains, and leverage AI predictions to make high-probability trading decisions.
 
 **Developed by**: [DEVRAJ](https://www.linkedin.com/in/devraj007/) 🚀
 
 ## 🌟 New Features
 -   **Smart Search**: Type "Nvidia", "Google", "Tesla" instead of tickers.
+-   **Sidebar Search Button**: Prevents app reload while typing for a smoother experience.
 -   **Global Currency Converter**: View prices in **USD, INR, EUR, GBP, CAD** instantly.
 -   **Interactive Charts**: Professional Plotly Candlestick charts with Volume & Bollinger Bands.
 -   **AI Predictions**: Uses a Bidirectional LSTM model to forecast price trends.
