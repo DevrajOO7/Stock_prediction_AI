@@ -53,8 +53,11 @@ def get_stock_info(ticker):
     """
     try:
         stock = yf.Ticker(ticker)
-        return stock.info
-    except:
+        # Force fetch
+        info = stock.info
+        return info if info else {}
+    except Exception as e:
+        # st.error(f"Error fetching info: {e}") # Optional debugging
         return {}
 
 def get_options_chain(ticker, date=None):

@@ -58,20 +58,40 @@ st.markdown("""
 
 # Sidebar
 st.sidebar.title("Trading Control")
-user_input = st.sidebar.text_input("Ticker or Company Name", "Nvidia")
-ticker = market_data.resolve_ticker(user_input)
 
-start_date = st.sidebar.date_input("Start Date", datetime(datetime.now().year - 2, 1, 1))
-end_date = st.sidebar.date_input("End Date", datetime.now())
+with st.sidebar.form("search_form"):
+    user_input = st.text_input("Ticker or Company Name", "Nvidia")
+    # Move other inputs inside the form so they don't trigger re-runs individually
+    
+    start_date = st.date_input("Start Date", datetime(datetime.now().year - 2, 1, 1))
+    end_date = st.date_input("End Date", datetime.now())
+    
+    # Currency Converter
+    currency = st.selectbox("Currency", ["USD", "INR", "EUR", "GBP", "CAD"])
 
-# Currency Converter
-currency = st.sidebar.selectbox("Currency", ["USD", "INR", "EUR", "GBP", "CAD"])
+    # Settings
+    st.markdown("---")
+    st.subheader("Settings")
+    show_indicators = st.checkbox("Show Technical Indicators", True)
+    enable_ai = st.checkbox("Enable AI Forecast", True)
+    
+    submitted = st.form_submit_button("Search 🔍")
+
+if not submitted and "ticker" not in st.session_state:
+    # First run default
+    ticker = market_data.resolve_ticker("Nvidia")
+    st.session_state["ticker"] = ticker
+elif submitted:
+    ticker = market_data.resolve_ticker(user_input)
+    st.session_state["ticker"] = ticker
+else:
+    # Use previous state if just re-running for some other reason (though form prevents most)
+    ticker = st.session_state.get("ticker", "NVDA")
+
+# Re-fetch exchange rate based on selection (which is now in form state)
 exchange_rate = market_data.get_exchange_rate(currency)
 
-st.sidebar.markdown("---")
-st.sidebar.subheader("Settings")
-show_indicators = st.sidebar.checkbox("Show Technical Indicators", True)
-enable_ai = st.sidebar.checkbox("Enable AI Forecast", True)
+# Inputs moved to form above
 
 st.sidebar.markdown("---")
 st.sidebar.markdown(
@@ -87,7 +107,15 @@ st.sidebar.markdown(
 # Fetch Basic Info for Header
 stock_info = market_data.get_stock_info(ticker)
 company_name = stock_info.get('longName', ticker)
-summary = stock_info.get('longBusinessSummary', 'No summary available.')
+
+# Robust Summary Fetching
+summary = stock_info.get('longBusinessSummary')
+if not summary:
+    summary = stock_info.get('businessSummary')
+if not summary:
+    summary = stock_info.get('description')
+if not summary:
+    summary = "No detailed business summary available for this company."
 
 # Main Dashboard
 st.title(f"📈 {company_name} ({ticker})")
