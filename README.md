@@ -24,8 +24,7 @@ A professional-grade financial analysis tool powered by Deep Learning (LSTM) and
 ### Installation
 1.  **Clone the Repository** (or download files):
     ```bash
-    git clone https://github.com/yourusername/stock-predictionpro.git
-    cd stock-predictionpro
+    git clone https://github.com/DevrajOO7/Stock_prediction_AI.git
     ```
 2.  **Install Dependencies**:
     ```bash
