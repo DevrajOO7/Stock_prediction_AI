@@ -58,9 +58,13 @@ This app is ready for **Streamlit Cloud** or **Render**.
 ## Screenshot
 
 <img width="1920" height="1032" alt="AI Trading Desk · Streamlit - Google Chrome 18-02-2026 15_08_13" src="https://github.com/user-attachments/assets/c300afb7-29aa-4921-8a8c-19b4f1c4df40" />
+
 <img width="1920" height="1032" alt="AI Trading Desk · Streamlit - Google Chrome 18-02-2026 15_04_41" src="https://github.com/user-attachments/assets/3e35e9c5-5efe-4872-8ddf-6f5ade5d654a" />
+
 <img width="1920" height="1032" alt="AI Trading Desk · Streamlit - Google Chrome 18-02-2026 15_04_25" src="https://github.com/user-attachments/assets/b3a8dd57-7fb9-4735-b052-62f87e9a3f98" />
+
 <img width="1920" height="1032" alt="AI Trading Desk · Streamlit - Google Chrome 18-02-2026 15_04_14" src="https://github.com/user-attachments/assets/f7111813-696b-440a-bd93-5c8c6af802f1" />
+
 <img width="1920" height="1032" alt="AI Trading Desk · Streamlit - Google Chrome 18-02-2026 15_03_54" src="https://github.com/user-attachments/assets/759340bd-6f6f-447c-8965-04e79ce15c99" />
 
 
