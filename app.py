@@ -97,7 +97,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown(
     """
     <div style="text-align: center; font-size: 12px; color: #888;">
-        © 2026 AI Trading Desk.<br>All rights reserved.<br>
+        © 2024 AI Trading Desk.<br>All rights reserved.<br>
         <span style="font-style: italic;">Designed by DEVRAJ</span>
     </div>
     """, 
