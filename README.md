@@ -37,35 +37,6 @@ A professional-grade financial analysis tool powered by Deep Learning (LSTM) and
     -   Double-click `run_app.bat` (Windows).
     -   Or run: `streamlit run app.py`
 
-## 📤 How to Push to GitHub
-
-If you want to host this code on your own GitHub:
-
-1.  **Initialize Git**:
-    Open your terminal/command prompt in the project folder and run:
-    ```bash
-    git init
-    ```
-
-2.  **Add Files**:
-    ```bash
-    git add .
-    ```
-
-3.  **Commit Changes**:
-    ```bash
-    git commit -m "Initial commit of AI Trading Dashboard v3.0"
-    ```
-
-4.  **Connect to GitHubRepo**:
-    -   Go to [GitHub.com](https://github.com) and create a **New Repository**.
-    -   Copy the URL (e.g., `https://github.com/YOUR_USER/YOUR_REPO_NAME.git`).
-    -   Run this command (replace user/repo):
-        ```bash
-        git remote add origin https://github.com/YOUR_USER/YOUR_REPO_NAME.git
-        git branch -M main
-        git push -u origin main
-        ```
 
 ## 🌐 Deployment
 This app is ready for **Streamlit Cloud** or **Render**.
